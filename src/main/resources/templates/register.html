@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!-- whole content of base come here -->
+<html lang="en" th:replace="~{base :: parent(~{::#content},~{::title},~{::script})}">
+<head>
+    <title>Sign Up</title>
+</head>
+<body>
+    <div id="content">
+
+        <div class=" grid grid-cols-10">
+
+            <div class="col-span-3"></div>
+            <div class="col-span-12 md:col-span-4" th:object="${userForm}">
+                
+
+<div class="w-full  p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-5 dark:bg-gray-800 dark:border-gray-700">
+    <div th:replace="message :: alertmsg"></div>
+    <form class="space-y-3" th:action="@{'/do-register'}"  method="post" >
+        <h5 class="text-xl text-center font-medium text-gray-900 dark:text-white">SignUp our platform</h5>
+        <div>
+            <label class="block mb-2 text-m font-medium text-gray-900 dark:text-white">Username</label>
+            <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" id="name" th:field="*{name}" required />
+        </div>
+        <div>
+            <label for="email" class="block mb-2 text-m font-medium text-gray-900 dark:text-white">Email</label>
+            <input type="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="name@company.com" th:field="*{email}" required />
+        </div>
+        <div>
+            <label for="password" class="block mb-2 text-m font-medium text-gray-900 dark:text-white">New password</label>
+            <input type="password" name="password" id="password" placeholder="••••••••" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"          th:field="*{password}" required />
+        </div>
+        
+<label for="message" class="block mb-2 text-m font-medium text-gray-900 dark:text-white">About</label>
+<textarea id="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" th:field="*{about}"  placeholder="Write  here..."></textarea>
+
+
+        <div class="flex items-start">
+        </div>
+        <div class="flex justify-center">
+        <button type="submit" class=" w-1/2 text-white bg-gray-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Register</button>
+        </div>
+    </form>
+</div>
+            </div>
+        </div>
+    </div>
+    <script>
+        console.log("this is SignUp page")
+    </script>
+    
+</body>
+</html>
